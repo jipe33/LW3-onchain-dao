@@ -4,9 +4,9 @@ import "@/styles/globals.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { sepolia } from "wagmi/chains";
-import { publicProvider } from "wagmi/providers/public";
+import { alchemyProvider } from 'wagmi/providers/alchemy';
 
-const { chains, publicClient } = configureChains([sepolia], [publicProvider()]);
+const { chains, publicClient } = configureChains([sepolia], [alchemyProvider({ apiKey: 'rl-mT0SlHhzqwJGrCQ-gQbzydwXDbazu' })]);
 
 const { connectors } = getDefaultWallets({
   appName: "CryptoDevs DAO",
